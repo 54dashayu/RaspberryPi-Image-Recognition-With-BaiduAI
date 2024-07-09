@@ -4,7 +4,12 @@ Hello World!
 
 大家好！我使用树莓派3B+和树莓派摄像头制作了一个项目，在你的帮助下完程的，可以实现拍照后调用百度大模型识别镜头前的物体，并使用百度语音TTS功能在树莓派3.5mm音频接口播放语音。
 
-本项目图像识别使用了百度千帆大模型公有云通用物体识别API（免费体验），TTS语音生成使用百度在线语音合成API（按Token后付费），请自行申请：https://cloud.baidu.com/?from=console。建立测试应用后调用API，将图像服务的APIKey和SecretKey替换app.py中的XXXXXXX部分，语音服务APIKey和SecretKey替换app.py中的YYYYYYY部分。
+本项目图像识别使用了百度千帆大模型公有云通用物体识别API（免费体验），TTS语音生成使用百度在线语音合成API（按Token后付费），请自行申请：https://cloud.baidu.com/?from=console。  
+
+![image](https://github.com/54dashayu/RaspberryPi-Image-Recognition-With-BaiduAI/assets/7693331/1025a0d3-4f0e-40bb-9558-0d638e25817c)
+
+
+建立测试应用后调用API，将图像服务的APIKey和SecretKey替换app.py中的XXXXXXX部分，语音服务APIKey和SecretKey替换app.py中的YYYYYYY部分。
 
 
 以下是项目的基本情况：
@@ -40,14 +45,8 @@ sudo apt install ffmpeg -y
 
 3. 项目代码、配置文件、文件目录结构
 目录结构：
-/home/用户/
-├── app.py
-├── templates/
-│   └── index.html
-├── static/
-│   └── zhanwei.png
-├── app.log
-└── speech.mp3
+
+![image](https://github.com/54dashayu/RaspberryPi-Image-Recognition-With-BaiduAI/assets/7693331/9477eeec-863a-4d0b-883c-cf388022f45c)
 
 5. 其他注意事项
 a.确保树莓派连接互联网，以便访问百度AI的API服务，本地网页端地址：http://Raspberrypi_IP:5000。
