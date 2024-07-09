@@ -15,15 +15,23 @@ Hello Word！这是我的第一个GitHub项目，感谢大家！
 
 
 以下是项目的基本情况：
+
 1. 硬件
+   
 树莓派 3B+
+
 树莓派摄像头
+
 OLED 屏幕 (SSD1306)
+
 按钮
+
 3.5mm耳机或扬声器
 
-2. 树莓派系统中需要支持的环境、库、程序
+3. 树莓派系统中需要支持的环境、库、程序
+   
 树莓派操作系统（建议使用最新的Raspberry Pi OS）
+
 安装必要的软件和库
 
 更新和升级系统软件包：
@@ -58,14 +66,22 @@ sudo apt install ffmpeg -y
 
 ![image](https://github.com/54dashayu/RaspberryPi-Image-Recognition-With-BaiduAI/assets/7693331/9477eeec-863a-4d0b-883c-cf388022f45c)
 
-5. 其他注意事项
-a.确保树莓派连接互联网，以便访问百度AI的API服务，本地网页端地址：http://Raspberrypi_IP:5000。
+5. 其他注意事项：
+   
+a.确保树莓派连接互联网，以便访问百度AI的API服务，本地网页端地址：http://Raspberrypi_IP:5000
+
 b.确保所有依赖库正确安装并配置。
+
 c.注意设置文件和目录的权限，确保程序可以读写所需文件。
+
  d.调整 GPU 内存，确保在 /boot/config.txt 文件中分配足够的 GPU 内存。编辑文件：
+ 
 sudo nano /boot/config.txt
+
 添加或修改以下行：
+
 gpu_mem=256
+
 e.配置音频输出，确保树莓派的音频设置正确，可以通过alsamixer进行调整。
 
 如果遇到问题，查看日志文件/home/用户/app.log获取详细信息。
