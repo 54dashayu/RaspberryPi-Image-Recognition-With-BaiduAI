@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <title>图像识别</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .image-container { margin: 20px 0; }
+        .result-container { margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>图像识别</h1>
+        <div class="image-container">
+            <img id="captured-image" src="{{ status.image_path }}" alt="占位图片" style="width: 640px;">
+        </div>
+        <button onclick="captureImage()">拍照识别</button>
+        <div class="result-container">
+            <h2>识别结果</h2>
+            <table id="result-table" border="1" style="margin: 0 auto;">
+                <tr>
+                    <th>物体</th>
+                    <th>置信度</th>
+                </tr>
+                {% if status.result %}
+                    {% for item in status.result %}
+                        <tr>
+                            <td>{{ item.keyword }}</td>
+                            <td>{{ item.score }}</td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">未检测到符合条件的物体</td>
+                    </tr>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+    <script>
+        function captureImage() {
+            fetch('/capture')
+                .then(response => response.json())
+                .then(data => {
+                    updatePage(data);
+                });
+        }
+
+        function updatePage(data) {
+            const timestamp = new Date().getTime();
+            const img = document.getElementById('captured-image');
+            img.src = `${data.image_path}?t=${timestamp}`;
+            img.style.width = "640px";
+            img.style.height = "auto";
+
+            const resultTable = document.getElementById('result-table');
+            while (resultTable.rows.length > 1) {
+                resultTable.deleteRow(1);
+            }
+            if (data.result) {
+                data.result.forEach(item => {
+                    const row = resultTable.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    cell1.innerHTML = item.keyword;
+                    cell2.innerHTML = item.score.toFixed(2);
+                });
+            } else {
+                const row = resultTable.insertRow();
+                const cell = row.insertCell(0);
+                cell.colSpan = 2;
+                cell.innerHTML = "未检测到符合条件的物体";
+            }
+        }
+
+        function resetPage() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    updatePage(data);
+                    if (!data.result) {
+                        document.getElementById('captured-image').src = "static/zhanwei.png";
+                    }
+                });
+        }
+
+        setInterval(function() {
+            resetPage();
+        }, 5000);  // 每5秒刷新一次
+    </script>
+</body>
+</html>
