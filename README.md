@@ -2,7 +2,10 @@ Hello World!
 
 我不会编程，大部分代码是由ChatGPT帮我完成，这是我的第一个GitHub项目，感谢大家！
 
-大家好！我使用树莓派3B+和树莓派摄像头制作了一个项目，在你的帮助下完程的，可以实现拍照后调用百度大模型识别镜头前的物体，并使用百度语音TTS功能在树莓派3.5mm音频接口播放语音。
+我使用树莓派3B+和树莓派摄像头制作了一个项目，在你的帮助下完程的，可以实现拍照后调用百度大模型识别镜头前的物体，并使用百度语音TTS功能在树莓派3.5mm音频接口播放语音。
+
+![Uploading image.png…]()
+
 
 本项目图像识别使用了百度千帆大模型公有云通用物体识别API（免费体验），TTS语音生成使用百度在线语音合成API（按Token后付费），请自行申请：https://cloud.baidu.com/?from=console。  
 
@@ -25,21 +28,27 @@ OLED 屏幕 (SSD1306)
 安装必要的软件和库
 更新和升级系统软件包：
 sudo apt update
+
 sudo apt upgrade -y
 
 安装 Git：
+
 sudo apt install git -y
 
 安装 Python 3 和 pip：
+
 sudo apt install python3 python3-pip -y
 
 安装必要的 Python 库：
+
 pip3 install flask requests Pillow luma.oled gpiozero pydub simplejson
 
 安装 mpg321 音频播放器：
+
 sudo apt install mpg321 -y
 
 安装 pydub 依赖库：
+
 sudo apt install ffmpeg -y
 
 
