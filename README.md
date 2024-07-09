@@ -1,5 +1,3 @@
-![image](https://github.com/54dashayu/RaspberryPi-Image-Recognition-With-BaiduAI/assets/7693331/2a6fbcc7-f19d-4944-b087-3bf88765861f)Hello World!
-
 我不会编程，是一个新手，大部分代码是由ChatGPT帮我完成。这是我的第一个GitHub项目，感谢大家！
 
 我使用树莓派3B+和树莓派摄像头制作了一个项目，在你的帮助下完程的，可以实现拍照后调用百度大模型识别镜头前的物体，并使用百度语音TTS功能在树莓派3.5mm音频接口播放语音。
