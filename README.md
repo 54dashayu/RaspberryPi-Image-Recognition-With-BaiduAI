@@ -23,7 +23,9 @@ OLED 屏幕 (SSD1306)
 2. 树莓派系统中需要支持的环境、库、程序
 树莓派操作系统（建议使用最新的Raspberry Pi OS）
 安装必要的软件和库
+
 更新和升级系统软件包：
+
 sudo apt update
 
 sudo apt upgrade -y
