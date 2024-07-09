@@ -39,7 +39,7 @@ sudo apt install ffmpeg -y
 
 
 3. 项目代码、配置文件、文件目录结构
-目录结构
+目录结构：
 /home/用户/
 ├── app.py
 ├── templates/
@@ -49,7 +49,7 @@ sudo apt install ffmpeg -y
 ├── app.log
 └── speech.mp3
 
-4. 其他注意事项
+5. 其他注意事项
 a.确保树莓派连接互联网，以便访问百度AI的API服务，本地网页端地址：http://Raspberrypi_IP:5000。
 b.确保所有依赖库正确安装并配置。
 c.注意设置文件和目录的权限，确保程序可以读写所需文件。
