@@ -74,7 +74,7 @@ b.确保所有依赖库正确安装并配置。
 
 c.注意设置文件和目录的权限，确保程序可以读写所需文件。
 
- d.调整 GPU 内存，确保在 /boot/config.txt 文件中分配足够的 GPU 内存。编辑文件：
+ d.调整树莓派的 GPU 内存以便更好的拍摄图片，确保在 /boot/config.txt 文件中分配足够的 GPU 内存。编辑文件：
  
 sudo nano /boot/config.txt
 
